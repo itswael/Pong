@@ -1,14 +1,14 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
-    def __init__(self):
+    def __init__(self, pos):
         super().__init__()
         self.penup()
         self.color("white")
         self.shape("square")
         self.shapesize(stretch_wid=5, stretch_len=1)
         #self.turtlesize(20, 100)
-        self.goto(350, 0)
+        self.goto(pos)
 
     def go_up(self):
         if self.ycor() < 230:
