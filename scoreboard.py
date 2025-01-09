@@ -9,17 +9,17 @@ class Scoreboard(Turtle):
         self.l_score = 0
         self.r_score = 0
         self.goto(-100, 200)
-        self.update_score()
         self.player_1 = player_1
         self.player_2 = player_2
         self.max_score = max_score
+        self.update_score()
 
     def update_score(self):
         self.clear()
         self.goto(-100, 200)
-        self.write(self.player_1 +": "+self.l_score, align="center", font=("Courier", 40, "normal"))
+        self.write(self.player_1 +": "+str(self.l_score), align="center", font=("Courier", 40, "normal"))
         self.goto(100, 200)
-        self.write(self.player_1 +": "+self.r_score, align="center", font=("Courier", 40, "normal"))
+        self.write(self.player_2 +": "+str(self.r_score), align="center", font=("Courier", 40, "normal"))
 
     def game_over(self, winner):
         self.clear()
@@ -37,8 +37,8 @@ class Scoreboard(Turtle):
     def check_winner(self):
         if self.l_score is self.max_score:
             self.game_over(self.player_1)
-            return True
+            return False
         if self.r_score is self.max_score:
             self.game_over(self.player_2)
-            return True
-        return False
+            return False
+        return True

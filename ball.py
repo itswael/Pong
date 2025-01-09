@@ -19,10 +19,10 @@ class Ball(Turtle):
 
     def bounce(self):
         self.y_move *= -1
-        self.pace *= 0.9
 
     def hit(self):
         self.x_move *= -1
+        self.pace *= 0.9
 
     def reset_game(self):
         self.goto(0, 0)
